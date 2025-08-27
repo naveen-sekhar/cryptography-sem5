@@ -15,6 +15,10 @@ def rail_fence_encrypt(text):
 
     # Combine rails to get ciphertext
     return rail1 + rail2
-# Get the input from the userr
-text = input("Enter the text to encrypt: ")
-print("Ciphertext:", rail_fence_encrypt(text))
+
+
+# Example usage
+plaintext = "Hello World"
+ciphertext = rail_fence_encrypt(plaintext)
+print(f"Plaintext: {plaintext}")
+print(f"Ciphertext: {ciphertext}")

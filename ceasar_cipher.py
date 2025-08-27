@@ -3,16 +3,20 @@ def caesar_cipher(text, shift, mode):
     for char in text:
         if char.isalpha():
             base = ord('A') if char.isupper() else ord('a')
-            if mode == 'e':
+            if mode == 'encrypt':
                 result += chr((ord(char) - base + shift) % 26 + base)
-            elif mode == 'd':
+            elif mode == 'decrypt':
                 result += chr((ord(char) - base - shift) % 26 + base)
         else:
             result += char
     return result
 
-text = input("Enter the text to encrypt/decrypt: ")
-shift = int(input("Enter the shift value: "))
-mode = input("Enter 'encrypt (e)' or 'decrypt (d)': ")
+# Example usage
+plaintext = "ATTACK AT DAWN"
+shift_value = 5
 
-print("text:", caesar_cipher(text, shift, mode))
+encrypted_text = caesar_cipher(plaintext, shift_value, 'encrypt')
+print("Encrypted:", encrypted_text)
+
+decrypted_text = caesar_cipher(encrypted_text, shift_value, 'decrypt')
+print("Decrypted:", decrypted_text)
